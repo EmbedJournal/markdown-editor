@@ -203,44 +203,85 @@
   </style>
 </head>
 <body>
-  <div id="in"><form><textarea id="code"># (GitHub-Flavored) Markdown Editor
+  <div id="in"><form><textarea id="code">
+# EmbedJournal Editor
 
-Basic useful feature list:
+Welcome blogger, This a basic editor for your convenience. If you are already aware of this, you can hit Ctrl-A and delete all of this and start a fresh.
 
- * Ctrl+S / Cmd+S to save the file
- * Ctrl+Shift+S / Cmd+Shift+S to choose to save as Markdown or HTML
- * Drag and drop a file into here to load it
- * File contents are saved in the URL so you can share files
+This is not a full blown editor and you will loose the data if you don't save it to a file. Here we will try to demonstrate some basic [markdown syntax](https://kramdown.gettalong.org/syntax.html). And yes that is how you create a text link.
 
+In this page, you will see that text that starat with `#` are converted ito heading 1 and those with `###` are converted to `###` heading 3. You can extent this to any number.
 
-I'm no good at writing sample / filler text, so go write something yourself.
+### Saving your work
 
-Look, a list!
+Within this editor, you can hit Ctrl-S to save the raw text as a .md file. To load an existing .md file, you can drag and drop the file into this window.
 
+### Images
+
+You can use the following syntax to insert images into your post. be sure to attache the original images along with the markdown file to us.
+
+```
+[ image src="image-name.jpg" ]
+```
+
+You could also add optional alt tag or caption to your images like so,
+
+```
+[ image src="image-name.jpg" alt="Image Name" caption="My image caption" ]
+```
+
+### YouTube videos
+
+Currently embedjournal supports only YouTube for videos. You can include youtube videos with their video ID. In the video URL, you will see `youtube.com/watch?v=XXX` where `XXX` is the video ID. Once you have the video ID, you can use the following syntax in your post to include them,
+
+```
+[ youtube src="XXX" ]
+```
+
+### Lists
+
+This is an unordered list
  * foo
  * bar
  * baz
 
-And here's some code! :+1:
+Similarly this is an ordered list,
+  1. foo
+  2. bar
+  3. baz
 
-```javascript
-$(function(){
-  $('div').html('I am a div.');
-});
+### Code
+
+To add code in-line with text, encode them with single back-ticks like `this-is-inline-code()`. On the other hand, if you want to show multiple lines of code, then enclose the block with three back-ticks. You can also specify the language.
+
+```c
+int main()
+{
+    printf("EmbedJournal rocks!!\n");
+    return 0;
+}
 ```
 
-This is [on GitHub](https://github.com/jbt/markdown-editor) so let me know if I've b0rked it somewhere.
+### Blockquotes
+
+you can quote someone like so,
+
+> Earth is round!
+>
+> Like you don't know it already!
 
 
-Props to Mr. Doob and his [code editor](http://mrdoob.com/projects/code-editor/), from which
-the inspiration to this, and some handy implementation hints, came.
+### Tables
 
-### Stuff used to make this:
+Markdown supports some tables. If you want anything more than that, you will have to do bare HTML. And yeah, you can write HTML here.
 
- * [markdown-it](https://github.com/markdown-it/markdown-it) for Markdown parsing
- * [CodeMirror](http://codemirror.net/) for the awesome syntax-highlighted editor
- * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for syntax highlighting in output code blocks
- * [js-deflate](https://github.com/dankogai/js-deflate) for gzipping of data to make it fit in URLs
+| Col 1    | Col 2    |
+|----------|----------|
+| 1,1      | 1,2      |
+| 2,2      | 2,2      |
+
+Obviously you can add more rows and columns.
+
 </textarea></form></div>
   <div id="out"></div>
   <div id="menu">
